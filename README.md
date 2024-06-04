@@ -1,1 +1,1 @@
-# umc_study
+# UMC-Spring-6th-Study
