@@ -3,6 +3,8 @@ package umc.spring.domain;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import umc.spring.domain.common.BaseEntity;
 import umc.spring.domain.enums.Gender;
 import umc.spring.domain.enums.MemberStatus;
@@ -17,6 +19,8 @@ import java.util.List;
 
 @Entity
 @Getter
+@DynamicUpdate
+@DynamicInsert
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -26,33 +30,32 @@ public class Member extends BaseEntity {
     @Column(name = "member_id")
     private Long id;
 
-    @Column(nullable = false, length = 20)
+//    @Column(nullable = false, length = 20)
     private String name;
 
-    @Column(nullable = false, length = 40)
+//    @Column(nullable = false, length = 40)
     private String address;
 
-    @Column(nullable = false, length = 40)
+//    @Column(nullable = false, length = 40)
     private String specAddress;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 10)
+//    @Column(nullable = false, length = 10)
     private Gender gender;
 
     @Enumerated(EnumType.STRING)
     private SocialType socialType;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 15)
-    @ColumnDefault("'ACTIVE'")
+//    @Column(nullable = false, length = 15)
+//    @ColumnDefault("'ACTIVE'")
     private MemberStatus status;
 
     private LocalDate inactiveDate;
 
-    @Column(nullable = false, length = 50, unique = true)
+//    @Column(nullable = false, length = 50, unique = true)
     private String email;
 
-    @Column(nullable = false)
     @ColumnDefault("0")
     private Integer point;
 
