@@ -47,4 +47,10 @@ public class MemberConverter {
 
     }
 
+    public static MemberResponseDTO.ChallengeMissionResultDTO toChallengeMissionResultDTO(Member member) {
+        return MemberResponseDTO.ChallengeMissionResultDTO.builder()
+                .memberId(member.getId())
+                .createdAt(LocalDateTime.now())
+                .build();
+    }
 }

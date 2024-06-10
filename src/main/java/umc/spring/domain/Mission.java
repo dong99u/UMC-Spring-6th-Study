@@ -47,4 +47,9 @@ public class Mission extends BaseEntity {
         this.store = store;
         store.getMissionList().add(this);
     }
+
+    public void addMemberMissionList(MemberMission memberMission) {
+        memberMissionList.add(memberMission);
+        memberMission.setMission(this);
+    }
 }

@@ -28,7 +28,13 @@ public class MemberRequestDTO {
         String specAddress;
         @ExistCategories
         List<Long> preferCategory;
-
     }
+
+    @Getter
+    public static class ChallengeMissionDto {
+        @NotNull
+        Long missionId;
+    }
+
 
 }

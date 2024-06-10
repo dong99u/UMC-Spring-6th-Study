@@ -1,5 +1,6 @@
 package umc.spring.web.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import umc.spring.apiPayload.ApiResponse;
@@ -21,13 +22,13 @@ public class StoreRestController {
     private final StoreCommandService storeCommandService;
 
     @PostMapping("/{storeId}/review")
-    public ApiResponse<ReviewResponseDTO.ReviewDto> registerReview(@RequestBody ReviewRequestDTO.CreateReviewDTO request){
+    public ApiResponse<ReviewResponseDTO.ReviewDto> registerReview(@RequestBody @Valid ReviewRequestDTO.CreateReviewDTO request){
         Review review = storeCommandService.registerReview(request);
         return ApiResponse.onSuccess(ReviewConverter.toReviewResultDTO(review));
     }
 
     @PostMapping("/{storeId}/mission")
-    public ApiResponse<MissionResponseDTO.MissionDto> registerMission(@RequestBody MissionRequestDTO.CreateMissionDTO request){
+    public ApiResponse<MissionResponseDTO.MissionDto> registerMission(@RequestBody @Valid MissionRequestDTO.CreateMissionDTO request){
         Mission mission = storeCommandService.registerMission(request);
 
         return ApiResponse.onSuccess(MissionConverter.toMissionResultDTO(mission));
