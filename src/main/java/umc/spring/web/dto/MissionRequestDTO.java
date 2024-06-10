@@ -6,19 +6,17 @@ import lombok.Getter;
 
 import java.time.LocalDate;
 
-public class ReviewRequestDTO {
+public class MissionRequestDTO {
 
     @Getter
-    public static class CreateReviewDTO {
+    public static class CreateMissionDTO {
         @NotNull
         Long storeId;
-        @NotNull
-        Long memberId;
         @NotBlank
-        String title;
-        @NotBlank
-        String content;
+        String missionSpec;
         @NotNull
-        Float score;
+        Integer reward;
+        @NotBlank
+        LocalDate deadline;
     }
 }
