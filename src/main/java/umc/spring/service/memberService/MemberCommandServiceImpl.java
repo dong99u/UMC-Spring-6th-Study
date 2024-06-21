@@ -16,7 +16,7 @@ import umc.spring.domain.mapping.MemberPrefer;
 import umc.spring.repository.FoodCategoryRepository;
 import umc.spring.repository.MemberRepository;
 import umc.spring.repository.MissionRepository;
-import umc.spring.web.dto.MemberRequestDTO;
+import umc.spring.web.dto.member.MemberRequestDTO;
 import umc.spring.apiPayload.code.status.ErrorStatus;
 
 

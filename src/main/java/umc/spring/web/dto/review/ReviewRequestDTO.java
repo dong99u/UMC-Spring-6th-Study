@@ -1,10 +1,8 @@
-package umc.spring.web.dto;
+package umc.spring.web.dto.review;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
-
-import java.time.LocalDate;
 
 public class ReviewRequestDTO {
 
